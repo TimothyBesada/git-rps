@@ -22,7 +22,17 @@
         window.onload = playerInput();
         function playerInput() {
             let playerInputValue = prompt('Please enter rock, paper or scissors').toLowerCase();
-            console.log(playerInputValue);
+
+            if (playerInputValue == value); {
+                alert("Please enter either rock, paper or scissors");
+            } else {
+                console.log(playerInputValue);
+            }
+        }
+
+        //Testing the player input against a regex
+        function testInput(value) {
+            let value = /rock|paper|scissors/i;
         }
 
 
