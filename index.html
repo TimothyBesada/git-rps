@@ -18,22 +18,73 @@
     <script>
         "use strict";
 
-        //Creating a prompt when the page loads and asks the user for an input and then converts it to lower case
-        window.onload = playerInput();
-        function playerInput() {
-            let playerInputValue = prompt('Please enter rock, paper or scissors').toLowerCase();
+        //The function for the randomly generated computer play
+        function computerPlay() {
+            let calculationPlay = Math.floor(Math.random() * (4 - 1) + 1);
+            if (calculationPlay == 1) {
+                return "rock";
+            } else if (calculationPlay == 2) {
+                return "paper";
+            } else if (calculationPlay == 3) {
+                return "scissors";
+            }
+        }
+        //Unfinished prompt-function for players choice
+        function playerSelection(playerChoice) {
+            return playerChoice;
+        }
 
-            if (playerInputValue == value); {
-                alert("Please enter either rock, paper or scissors");
-            } else {
-                console.log(playerInputValue);
+        //The actual game determining evaluation
+        function gameOn(playerSelection, computerPlay) {
+            if (playerSelection == computerPlay) {
+                console.log("It's a draw!")
+            } else if (computerPlay == "paper" && playerSelection == "rock") {
+                console.log("Computer wins! (Paper beats rock)")
+            } else if (computerPlay == "paper" && playerSelection == "scissors") {
+                console.log("Player wins! (Scissors beats paper)")
+            } else if (computerPlay == "scissors" && playerSelection == "rock") {
+                console.log("Player wins! (Rock beats scissors)")
+            } else if (computerPlay == "scissors" && playerSelection == "paper") {
+                console.log("Computer wins! (Scissors beats paper)")
+            } else if (computerPlay == "rock" && playerSelection == "paper") {
+                console.log("Player wins! (Paper beats rock)")
+            } else if (computerPlay == "rock" && playerSelection == "scissors") {
+                console.log("Computer wins! (Rock beats scissors)")
             }
         }
 
-        //Testing the player input against a regex
-        function testInput(value) {
-            let value = /rock|paper|scissors/i;
-        }
+
+
+
+
+
+
+
+
+
+
+
+        // let value = /rock|paper|scissors/i;
+
+        // //Creating a prompt when the page loads and asks the user for an input and then converts it to lower case
+        // window.onload = playerInput();
+        // function playerInput() {
+        //     let playerInputValue = prompt('Please enter rock, paper or scissors').toLowerCase();
+        //     if (playerInputValue != value) {
+        //         alert("Please enter rock, paper or scissors");
+        //         location.reload(true);
+        //     } else {
+        //         alert("You got it!");
+        //         location.reload(true);
+        //     }
+        // }
+
+
+
+        // //Testing the player input against a regex
+        // /*function testInput(value) {
+        //     let value = /rock|paper|scissors/i;
+        // }*/
 
 
 
