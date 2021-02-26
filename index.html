@@ -18,6 +18,7 @@
     <script>
         "use strict";
 
+        // Asking the player to enter a value of choice and if its not "correct" then re-prompts the user, if "true" it should take the value and fire up the game
         askPlayerRegex()
         function askPlayerRegex() {
             let playerAnswer = prompt("What is your choice, rock, paper or scissors?");
@@ -26,21 +27,15 @@
             if (playerAnswer == null) {
                 alert("Please enter rock, paper or scissors");
                 location.reload()
-            } else if (found == true) {
-                return playerAnswer;
+            } else if (found == true) { // <--- PUT THE GAME INSIDE HERE BUT TRY TO RETRIEVE THE VALUE OF THE FUNCTION INTO ANOTHER FUNCTION FIRST!
+                let lowerCaseAnswer = playerAnswer.toLowerCase()
+                console.log(gameOn(lowerCaseAnswer, computerPlay()));
             } else if (found == false) {
                 alert("Please enter rock, paper or scissors");
-                location.reload()
+                location.reload();
             }
         }
 
-
-        //taking the player selection from askPlayerRegex
-        jobMeal()
-        function jobMeal() {
-            let playerSelection = askPlayerRegex();
-            alert(playerSelection);
-        }
 
         //The function for the randomly generated computer play
         function computerPlay() {
@@ -73,43 +68,6 @@
                 console.log("Computer wins! (Rock beats scissors)")
             }
         }
-
-       // for the console. gameOn(playerSelection("scissors"), computerPlay())
-
-
-
-
-
-
-
-
-
-        // let value = /rock|paper|scissors/i;
-
-        // //Creating a prompt when the page loads and asks the user for an input and then converts it to lower case
-        // window.onload = playerInput();
-        // function playerInput() {
-        //     let playerInputValue = prompt('Please enter rock, paper or scissors').toLowerCase();
-        //     if (playerInputValue != value) {
-        //         alert("Please enter rock, paper or scissors");
-        //         location.reload(true);
-        //     } else {
-        //         alert("You got it!");
-        //         location.reload(true);
-        //     }
-        // }
-
-
-
-        // //Testing the player input against a regex
-        // /*function testInput(value) {
-        //     let value = /rock|paper|scissors/i;
-        // }*/
-
-
-
-
-
 
 
 
