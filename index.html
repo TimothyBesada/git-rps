@@ -18,6 +18,30 @@
     <script>
         "use strict";
 
+        askPlayerRegex()
+        function askPlayerRegex() {
+            let playerAnswer = prompt("What is your choice, rock, paper or scissors?");
+            let regex = /^rock$|^paper$|^scissors$/i;
+            let found = regex.test(playerAnswer);
+            if (playerAnswer == null) {
+                alert("Please enter rock, paper or scissors");
+                location.reload()
+            } else if (found == true) {
+                return playerAnswer;
+            } else if (found == false) {
+                alert("Please enter rock, paper or scissors");
+                location.reload()
+            }
+        }
+
+
+        //taking the player selection from askPlayerRegex
+        jobMeal()
+        function jobMeal() {
+            let playerSelection = askPlayerRegex();
+            alert(playerSelection);
+        }
+
         //The function for the randomly generated computer play
         function computerPlay() {
             let calculationPlay = Math.floor(Math.random() * (4 - 1) + 1);
@@ -29,10 +53,7 @@
                 return "scissors";
             }
         }
-        //Unfinished prompt-function for players choice
-        function playerSelection(playerChoice) {
-            return playerChoice;
-        }
+
 
         //The actual game determining evaluation
         function gameOn(playerSelection, computerPlay) {
@@ -53,8 +74,7 @@
             }
         }
 
-
-
+       // for the console. gameOn(playerSelection("scissors"), computerPlay())
 
 
 
