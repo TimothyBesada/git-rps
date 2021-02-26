@@ -27,14 +27,20 @@
             if (playerAnswer == null) {
                 alert("Please enter rock, paper or scissors");
                 location.reload()
-            } else if (found == true) { // <--- PUT THE GAME INSIDE HERE BUT TRY TO RETRIEVE THE VALUE OF THE FUNCTION INTO ANOTHER FUNCTION FIRST!
+            } else if (found == true) {
                 let lowerCaseAnswer = playerAnswer.toLowerCase()
-                console.log(gameOn(lowerCaseAnswer, computerPlay()));
+                let i
+                for (i = 0; i < 6; i++) {
+                    console.log(gameOn(lowerCaseAnswer, computerPlay()));
+                }
             } else if (found == false) {
                 alert("Please enter rock, paper or scissors");
                 location.reload();
             }
         }
+
+        //CREATE A FUNCTION HERE AND GET THE RETURN VALUE FROM ABOVE FUNCTION AND THE GAME
+        wooooop
 
 
         //The function for the randomly generated computer play
