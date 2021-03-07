@@ -24,40 +24,43 @@
             let playerAnswer = prompt("What is your choice, rock, paper or scissors?");
             let regex = /^rock$|^paper$|^scissors$/i;
             let found = regex.test(playerAnswer);
-            if (playerAnswer == null) {
+            if (playerAnswer === null) {
                 alert("Please enter rock, paper or scissors");
                 location.reload()
-            } else if (found == true) {
-                let lowerCaseAnswer = playerAnswer.toLowerCase()
-                let i
-                for (i = 0; i < 6; i++) {
-                    console.log(gameOn(lowerCaseAnswer, computerPlay()));
-                }
-            } else if (found == false) {
+            }
+            if (found === true) {
+                gameOn(playerAnswer)
+            } else if (found === false) {
                 alert("Please enter rock, paper or scissors");
                 location.reload();
             }
         }
 
         //CREATE A FUNCTION HERE AND GET THE RETURN VALUE FROM ABOVE FUNCTION AND THE GAME
-        wooooop
+        function gameOn(playerAnswer) {
+            let lowerCasePlayerAnswer = playerAnswer.toLowerCase()
+            for (let i = 0; i < 5; i++) {
+                const datorSpel = computerPlay();
+                gameEval(lowerCasePlayerAnswer, datorSpel);
+            }
+        }
 
 
         //The function for the randomly generated computer play
         function computerPlay() {
             let calculationPlay = Math.floor(Math.random() * (4 - 1) + 1);
-            if (calculationPlay == 1) {
+            if (calculationPlay === 1) {
                 return "rock";
-            } else if (calculationPlay == 2) {
+            } else if (calculationPlay === 2) {
                 return "paper";
-            } else if (calculationPlay == 3) {
+            } else if (calculationPlay === 3) {
                 return "scissors";
             }
         }
 
 
         //The actual game determining evaluation
-        function gameOn(playerSelection, computerPlay) {
+        function gameEval(playerSelection, computerPlay) {
             if (playerSelection == computerPlay) {
                 console.log("It's a draw!")
             } else if (computerPlay == "paper" && playerSelection == "rock") {
