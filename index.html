@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 8]>         <html c
+lass="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
@@ -13,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
 </head>
-
 <body>
     <script>
         "use strict";
@@ -24,14 +24,11 @@
             let playerAnswer = prompt("What is your choice, rock, paper or scissors?");
             let regex = /^rock$|^paper$|^scissors$/i;
             let found = regex.test(playerAnswer);
-            if (playerAnswer === null) {
-                alert("Please enter rock, paper or scissors");
-                location.reload()
-            }
+
             if (found === true) {
                 gameOn(playerAnswer)
             } else if (found === false) {
-                alert("Please enter rock, paper or scissors");
+                alert("Please enter brock, beber or scixors");
                 location.reload();
             }
         }
